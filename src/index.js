@@ -1,7 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Intents } = require('discord.js');
-const { token } = require('../config.json');
 const roleForReactionData = require('./data/role-for-reactions');
 const findInMap = require('./helpers/find-in-map');
 
@@ -70,4 +69,4 @@ client.on('messageReactionRemove', async (reaction, user) => {
 	}
 });
 
-client.login(token);
+client.login(process.env.DJS_TOKEN);
